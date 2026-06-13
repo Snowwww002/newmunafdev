@@ -3,491 +3,380 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Telegram Landing</title>
+<title>Trade With Munaaf</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
-  --bg:#020617;
-  --cyan:#00eaff;
-  --purple:#7b2cff;
-  --white:#ffffff;
-  --gray:#bfc8d8;
+    --bg:#050505;
+    --card:#4b5f73;
+    --orange:#ff7a00;
+    --green:#00ff88;
+    --cyan:#00f7ff;
+    --white:#ffffff;
 }
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-
-  background:
-  radial-gradient(circle at top,
-  #0b2447 0%,
-  #020617 40%,
-  #000000 100%);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    background:#050505;
+    overflow-x:hidden;
 }
 
-/* MAIN CONTAINER */
+/* MAIN CARD */
 
-.container{
-  width:100%;
-  max-width:420px;
+.card{
+    width:100%;
+    max-width:420px;
+    background:linear-gradient(
+    180deg,
+    #5b6f82,
+    #45576a
+    );
 
-  padding:35px 25px;
+    border-radius:35px;
 
-  border-radius:28px;
+    padding:35px 25px;
 
-  background:rgba(255,255,255,0.03);
+    text-align:center;
 
-  border:1px solid rgba(0,234,255,0.35);
+    border:2px solid rgba(255,122,0,.8);
 
-  backdrop-filter:blur(14px);
+    box-shadow:
+    0 0 15px rgba(255,122,0,.4),
+    0 0 35px rgba(255,122,0,.3),
+    0 0 70px rgba(255,122,0,.2);
 
-  box-shadow:
-  0 0 15px rgba(0,234,255,0.15),
-  0 0 35px rgba(0,234,255,0.08),
-  inset 0 0 20px rgba(255,255,255,0.02);
+    animation:
+    fadeUp 1s ease,
+    borderPulse 3s infinite alternate;
 
-  text-align:center;
-
-  position:relative;
-
-  animation:
-  fadeUp 1s ease,
-  borderGlow 4s infinite alternate;
-}
-
-/* GLOW BORDER */
-
-.container::before{
-  content:"";
-  position:absolute;
-  inset:-1px;
-  border-radius:28px;
-
-  padding:1px;
-
-  background:
-  linear-gradient(135deg,
-  rgba(0,234,255,0.9),
-  rgba(123,44,255,0.4),
-  rgba(0,234,255,0.9));
-
-  -webkit-mask:
-  linear-gradient(#fff 0 0) content-box,
-  linear-gradient(#fff 0 0);
-
-  -webkit-mask-composite:xor;
-  mask-composite:exclude;
-
-  pointer-events:none;
+    position:relative;
 }
 
 /* PROFILE */
 
-.profile-img{
-  width:120px;
-  height:120px;
+.profile-wrap{
+    width:145px;
+    height:145px;
+    margin:auto;
 
-  border-radius:50%;
-  object-fit:cover;
+    border-radius:50%;
 
-  border:3px solid var(--cyan);
+    padding:5px;
 
-  box-shadow:
-  0 0 15px var(--cyan),
-  0 0 40px rgba(0,234,255,0.6);
+    background:
+    linear-gradient(
+    135deg,
+    var(--orange),
+    var(--cyan),
+    var(--green)
+    );
 
-  animation:pulse 2.5s infinite;
+    animation:pulse 2.5s infinite;
 }
 
-/* ========================= */
-/* CHANGE IMAGE HERE 🔥 */
-/* ========================= */
+.profile{
+    width:100%;
+    height:100%;
 
-/*
-REPLACE IMAGE LINK BELOW
+    border-radius:50%;
+    object-fit:cover;
 
-https://i.imgur.com/8Km9tLL.png
-
-WITH YOUR OWN IMAGE LINK
-*/
-
-/* LIVE COUNTER */
-
-.live-counter{
-  margin-top:14px;
-
-  color:var(--cyan);
-
-  font-size:14px;
-  font-weight:600;
-
-  text-shadow:0 0 10px rgba(0,234,255,0.7);
+    border:4px solid rgba(0,255,136,.9);
 }
 
-/* NAME */
+/* CHANGE IMAGE HERE */
+ /*
+ src="YOUR_IMAGE_LINK"
+ */
 
-.name{
-  margin-top:18px;
+.title{
+    margin-top:18px;
 
-  color:white;
+    color:var(--cyan);
 
-  font-size:30px;
-  font-weight:700;
+    font-size:30px;
+    font-weight:700;
 
-  text-align:center;
+    text-shadow:
+    0 0 10px rgba(0,247,255,.6);
 
-  text-shadow:
-  0 0 12px rgba(0,234,255,0.6);
 }
 
-/* EXTRA BUTTON */
+/* INFO */
 
-.top-btn{
-  margin-top:18px;
+.info{
+    margin-top:28px;
 }
 
-/* BUTTONS */
+.info-item{
+    padding:13px 0;
 
-.buttons{
-  margin-top:28px;
+    color:white;
+    font-weight:500;
 
-  display:flex;
-  flex-direction:column;
-  gap:15px;
+    border-bottom:1px solid rgba(255,255,255,.12);
 }
+
+.info-item:last-child{
+    border-bottom:none;
+}
+
+.join-text{
+    margin-top:18px;
+
+    font-style:italic;
+
+    color:#ffffff;
+    opacity:.9;
+}
+
+/* BUTTON */
 
 .btn{
-  display:block;
+    display:block;
 
-  text-decoration:none;
+    margin-top:28px;
 
-  padding:15px 20px;
+    text-decoration:none;
 
-  border-radius:50px;
+    color:white;
 
-  color:white;
+    font-weight:700;
 
-  font-weight:600;
+    padding:18px;
 
-  transition:0.35s ease;
+    border-radius:60px;
 
-  background:
-  linear-gradient(135deg,var(--cyan),var(--purple));
+    background:
+    linear-gradient(
+    135deg,
+    var(--orange),
+    var(--green)
+    );
 
-  box-shadow:
-  0 0 18px rgba(0,234,255,0.35);
+    box-shadow:
+    0 0 18px rgba(255,122,0,.4),
+    0 0 35px rgba(0,255,136,.2);
+
+    transition:.35s;
+    animation:float 3s infinite ease-in-out;
 }
 
-.btn:hover{
-  transform:scale(1.05);
-
-  box-shadow:
-  0 0 22px rgba(0,234,255,0.8),
-  0 0 45px rgba(123,44,255,0.5);
-}
-
-/* FEATURES */
-
-.features{
-  margin-top:30px;
-  text-align:left;
-}
-
-.feature{
-  display:flex;
-  align-items:center;
-  gap:14px;
-
-  padding:15px 0;
-
-  border-bottom:1px solid rgba(255,255,255,0.08);
-
-  color:var(--gray);
-
-  animation:fadeUp 1s ease;
-}
-
-.icon{
-  font-size:20px;
-
-  filter:
-  drop-shadow(0 0 6px rgba(0,234,255,0.8));
-}
-
-/* DESCRIPTION */
-
-.description{
-  margin-top:26px;
-
-  color:#d2d9e4;
-
-  line-height:1.7;
-}
-
-/* QUOTE */
-
-.quote{
-  margin-top:28px;
-
-  color:#b9c1d0;
-
-  font-size:14px;
-
-  line-height:1.8;
-}
-
-/* BADGE */
-
-.badge{
-  margin-top:28px;
-
-  padding:14px;
-
-  border-radius:18px;
-
-  border:1px solid rgba(0,234,255,0.25);
-
-  background:rgba(255,255,255,0.02);
-
-  color:#d7deeb;
-
-  font-size:13px;
-}
-
-.badge a{
-  color:var(--cyan);
-  text-decoration:none;
-  font-weight:600;
-}
-
-/* =============================== */
-/* CHANGE ADVERTISE LINK HERE 🔥 */
-/* =============================== */
-
+/* CHANGE TELEGRAM LINK HERE */
 /*
-REPLACE # BELOW WITH YOUR LINK
-
-Example:
-https://t.me/yourchannel
+href="https://t.me/yourchannel"
 */
 
-/* FOOTER */
+.btn:hover{
+    transform:scale(1.05);
 
-.footer{
-  margin-top:22px;
+    box-shadow:
+    0 0 25px rgba(255,122,0,.7),
+    0 0 50px rgba(0,255,136,.5);
+}
 
-  font-size:11px;
+/* TIMER */
 
-  line-height:1.8;
+.timer{
+    margin-top:22px;
 
-  color:rgba(255,255,255,0.45);
+    color:white;
+
+    font-size:22px;
+    font-weight:700;
+}
+
+/* DISCLAIMER */
+
+.disclaimer{
+    margin-top:18px;
+
+    color:white;
+
+    opacity:.65;
+
+    font-size:12px;
+
+    line-height:1.7;
 }
 
 /* ANIMATIONS */
 
 @keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(25px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 @keyframes pulse{
-  0%{
-    box-shadow:
-    0 0 10px var(--cyan),
-    0 0 25px rgba(0,234,255,0.4);
-  }
 
-  50%{
-    box-shadow:
-    0 0 20px var(--cyan),
-    0 0 45px rgba(0,234,255,0.9);
-  }
+    0%{
+        box-shadow:
+        0 0 15px rgba(255,122,0,.5),
+        0 0 30px rgba(0,247,255,.3);
+    }
 
-  100%{
-    box-shadow:
-    0 0 10px var(--cyan),
-    0 0 25px rgba(0,234,255,0.4);
-  }
+    50%{
+        box-shadow:
+        0 0 25px rgba(255,122,0,.8),
+        0 0 45px rgba(0,247,255,.6);
+    }
+
+    100%{
+        box-shadow:
+        0 0 15px rgba(255,122,0,.5),
+        0 0 30px rgba(0,247,255,.3);
+    }
 }
 
-@keyframes borderGlow{
-  from{
-    box-shadow:
-    0 0 10px rgba(0,234,255,0.12),
-    0 0 25px rgba(0,234,255,0.06);
-  }
+@keyframes borderPulse{
 
-  to{
-    box-shadow:
-    0 0 18px rgba(0,234,255,0.25),
-    0 0 40px rgba(0,234,255,0.15);
-  }
+    from{
+        box-shadow:
+        0 0 15px rgba(255,122,0,.4),
+        0 0 35px rgba(255,122,0,.3);
+    }
+
+    to{
+        box-shadow:
+        0 0 25px rgba(255,122,0,.7),
+        0 0 60px rgba(255,122,0,.4);
+    }
 }
 
-/* MOBILE */
+@keyframes float{
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-4px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
 
 @media(max-width:480px){
 
-  .name{
-    font-size:25px;
-  }
+    .title{
+        font-size:25px;
+    }
 
 }
 
 </style>
 </head>
-
 <body>
 
-<div class="container">
+<div class="card">
 
-  <!-- PROFILE IMAGE -->
+    <!-- PROFILE IMAGE -->
 
-  <!-- ===================== -->
-  <!-- CHANGE IMAGE HERE 🔥 -->
-  <!-- ===================== -->
+    <div class="profile-wrap">
 
-  <img
-    src="https://i.imgur.com/8Km9tLL.png"
-    class="profile-img"
-    alt="Profile"
-  >
+        <!-- CHANGE IMAGE LINK BELOW -->
 
-  <!-- LIVE COUNTER -->
+        <img
+        src="https://i.imgur.com/8Km9tLL.png"
+        class="profile"
+        alt="Profile">
 
-  <div class="live-counter">
-    🔴 Live Traders: <span id="counter">876</span>
-  </div>
+    </div>
 
-  <!-- NAME -->
+    <h1 class="title">
+        Trade With Munaaf
+    </h1>
 
-  <div class="name">
-    PANKAJ BHARDWAJ
-  </div>
+    <!-- INFO SECTION -->
 
-  <!-- EXTRA BUTTON -->
+    <div class="info">
 
-  <div class="top-btn">
+        <div class="info-item">
+            NIFTY BANKNIFTY SENSEX
+        </div>
 
-    <!-- ============================ -->
-    <!-- CHANGE FIRST BUTTON LINK 🔥 -->
-    <!-- ============================ -->
+        <div class="info-item">
+            DAILY CALLS AVAILABLE ✅
+        </div>
+
+        <div class="info-item">
+            95% accuracy confirm ⭐
+        </div>
+
+        <div class="info-item">
+            6 year experience 🎯
+        </div>
+
+    </div>
+
+    <div class="join-text">
+        "So join fast guys"
+    </div>
+
+    <!-- BUTTON -->
 
     <a href="#" class="btn">
-      WATCH FREE SESSION
+        JOIN CHANNEL
     </a>
 
-  </div>
+    <!-- TIMER -->
 
-  <!-- FEATURES -->
-
-  <div class="features">
-
-    <div class="feature">
-      <div class="icon">🌐</div>
-      <div>Learning & Educational Sessions</div>
+    <div class="timer">
+        Redirecting in <span id="count">4</span>s...
     </div>
 
-    <div class="feature">
-      <div class="icon">📊</div>
-      <div>Market Concepts & Awareness</div>
+    <!-- DISCLAIMER -->
+
+    <div class="disclaimer">
+        यह केवल शैक्षिक एवं सूचना उद्देश्य हेतु है।<br>
+        कृपया अपने विवेक से निर्णय लें।
     </div>
-
-    <div class="feature">
-      <div class="icon">💎</div>
-      <div>Chart Reading Concepts</div>
-    </div>
-
-    <div class="feature">
-      <div class="icon">💻</div>
-      <div>Educational Case Discussions</div>
-    </div>
-
-  </div>
-
-  <!-- DESCRIPTION -->
-
-  <div class="description">
-    Join our learning community and grow your knowledge
-  </div>
-
-  <!-- SECOND BUTTON -->
-
-  <div class="buttons">
-
-    <!-- =============================== -->
-    <!-- CHANGE TELEGRAM BUTTON LINK 🔥 -->
-    <!-- =============================== -->
-
-    <a href="#" class="btn">
-      JOIN TELEGRAM
-    </a>
-
-  </div>
-
-  <!-- QUOTE -->
-
-  <div class="quote">
-    नियत अच्छी और मेहनत सच्ची हो, तो कामयाबी जरूर मिलती है।
-  </div>
-
-  <!-- BADGE -->
-
-  <div class="badge">
-
-    This Channel Advertise By
-
-    <!-- ================================= -->
-    <!-- CHANGE ADVERTISE LINK HERE 🔥 -->
-    <!-- ================================= -->
-
-    <a href="#">
-      SNOW AGENCY
-    </a>
-
-  </div>
-
-  <!-- FOOTER -->
-
-  <div class="footer">
-    Terms | Privacy | Disclaimer <br>
-    This site is not part of Facebook™ or endorsed by Facebook™.
-  </div>
 
 </div>
 
 <script>
 
-/* LIVE COUNTER */
+let count = 4;
 
-let count = 876;
+const counter = document.getElementById("count");
 
-setInterval(() => {
+const timer = setInterval(() => {
 
-  count += Math.floor(Math.random() * 3);
+    count--;
 
-  document.getElementById("counter").innerText = count;
+    counter.innerText = count;
 
-}, 3000);
+    if(count <= 0){
+
+        clearInterval(timer);
+
+        // REDIRECT LINK HERE
+        // window.location.href="https://t.me/yourchannel";
+
+    }
+
+},1000);
 
 </script>
 
